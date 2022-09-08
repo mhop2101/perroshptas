@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import time
 import json
 
@@ -44,7 +44,8 @@ def get_available_room(room_code, info) -> list:
             else:
                 start_time = schedule['time_ini']
                 end_time = schedule['time_fin']
-                current_time = time.strftime("%H%M")
+                current_time = (datetime.now(timezone.utc)
+                                - timedelta(hours=5)).strftime("%H%M")
                 if check_time_in_range(start_time, end_time, current_time):
                     try:
                         available_rooms.remove(room)
