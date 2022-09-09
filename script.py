@@ -42,15 +42,19 @@ def get_available_room(room_code, info) -> list:
             if schedule[current_week_day_key] is None:
                 continue
             else:
-                start_time = schedule['time_ini']
-                end_time = schedule['time_fin']
-                current_time = (datetime.now(timezone.utc)
-                                - timedelta(hours=5)).strftime("%H%M")
-                if check_time_in_range(start_time, end_time, current_time):
-                    try:
-                        available_rooms.remove(room)
-                    except:
-                        pass
+                try:
+                    start_time = schedule['time_ini']
+                    end_time = schedule['time_fin']
+                    current_time = (datetime.now(timezone.utc)
+                                    - timedelta(hours=5)).strftime("%H%M")
+                    if check_time_in_range(start_time, end_time, current_time):
+                        try:
+                            available_rooms.remove(room)
+                        except:
+                            pass
+                except:
+                    pass
+
     in_building = []
 
     for room in available_rooms:
