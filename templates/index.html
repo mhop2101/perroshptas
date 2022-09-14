@@ -19,7 +19,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            
+
           </ul>
         </div>
       </div>
@@ -85,6 +85,24 @@
                 <ul class="list-unstyled mt-3 mb-4">
 
                   {% for element in sd %}
+
+                    <li>{{element}}</li>
+
+                  {% endfor %}
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">RGD</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+
+                  {% for element in rgd %}
 
                     <li>{{element}}</li>
 

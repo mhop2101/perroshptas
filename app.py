@@ -14,12 +14,13 @@ def hello_world():
     ll = get_available_room('.LL', info)
     c = get_available_room('.C_', info)
     sd = get_available_room('.SD', info)
-
+    rgd = get_available_room('.RG', info)
     return render_template('index.html',
                            ml=ml,
                            ll=ll,
                            c=c,
-                           sd=sd)
+                           sd=sd,
+                           rgd=rgd)
 
 
 if __name__ == '__main__':
